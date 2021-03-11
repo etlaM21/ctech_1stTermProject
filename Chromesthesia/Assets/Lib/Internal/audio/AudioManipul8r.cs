@@ -11,7 +11,7 @@ public class AudioManipul8r : MonoBehaviour
 
     bool muteFreq = false;
 
-    bool soloFreq = true;
+    bool soloFreq = false;
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +85,7 @@ public class AudioManipul8r : MonoBehaviour
             mixer.SetFloat("SoloLowPass", highcutoff);
             mixer.SetFloat("SoloHighPass", lowcutoff);
         }
-        else {
+        if(muteFreq) {
             mixer.SetFloat("SoloLowPass", 22000);
             mixer.SetFloat("SoloHighPass", 10);
         }
